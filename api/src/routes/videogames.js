@@ -51,41 +51,29 @@ router.get('/', async (req, res, next) => {
         } catch (e) {
             console.log(e)
         }
-
-    } else if (req.query.name) {     // si lo llaman x query -------------------------------------------------
+        //-----------------------------------------si lo llaman x query --------------------------------------------------------------------
+    } else if (req.query.name) {
 
         console.log("QUERY=", req.query.name);
         try {
-            let count = 0;
             let juegosDb = [];
             let pages = [];
-            let pepito = await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}&search=${req.query.name}`
+            let apiGames = await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}&search=${req.query.name}`
             );
-            console.log("IMPORTANT", pepito.data)
-            let curr = pepito.data;
 
-            while (count < 4) {
-                let findNext = await axios.get(curr.next);
-                console.log("PEPE", curr.next)
-                pages.concat(findNext.data.results);
-                curr = findNext.data;
-                count++;
-            }
-
+            pages.push(apiGames.data);
             let findDbGame = await Videogame.findAll({
-
                 where: {
                     name: { [Op.iLike]: `%${req.query.name}%` },
                 },
                 include: { model: Genre }
             });
             juegosDb.push(findDbGame);
-            console.log("PAGES2=", pages.length)
             for (var i = 0; i < pages.length; i++) {
-                // filter out games in api pages which contain req query name
-                var y = pages[i].results
+                //itero las paginas y filtro todo los juegos de las paginas de la api que coincidan con el req query name
+                var gamesOfPage = pages[i].results
                     .filter(elem =>
-                        elem.name.toLowerCase().includes(req.query.name.toLowerCase())
+                        elem.name.replace(/\s/g, '').toLowerCase().includes(req.query.name.replace(/\s/g, '').toLowerCase())
                     )
                     .map(elem => {
                         return {
@@ -97,7 +85,9 @@ router.get('/', async (req, res, next) => {
                             platforms: elem.platforms?.map(elem => elem.platform.name),
                         };
                     });
-                juegosDb.push(y); // push every obj which contains req.query in its name prop
+                if (gamesOfPage && gamesOfPage.length) {
+                    juegosDb.push(gamesOfPage); // pusheo todos los games que coinciden con el req query name
+                }
             }
 
             return res.status(200).send(juegosDb);
@@ -105,14 +95,8 @@ router.get('/', async (req, res, next) => {
             console.log("ERRORASD", e)
 
         }
-
     }
-
-
 });
-
-
-
 
 
 

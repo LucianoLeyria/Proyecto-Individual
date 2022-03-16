@@ -1,7 +1,6 @@
 const { Router } = require('express');
 const { Videogame, Genre } = require('../db');
 const axios = require('axios').default;
-const { Sequelize, Op } = require('sequelize');
 const router = Router();
 const { YOUR_API_KEY } = process.env;
 
