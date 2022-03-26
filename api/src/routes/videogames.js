@@ -14,12 +14,12 @@ router.get('/', async (req, res, next) => {
                     id: e.id,
                     name: e.name,
                     description: e.description,
-                    image: e.background_image,
+                    image: e.image,
                     rating: e.rating,
                     platforms: e.platforms,
                     released: e.released,
                     genres: e.genres?.map(e => e.name),
-                    source: "Created",
+                    createdInDb: e.createdInDb
                 };
             });
             let gamesApi;
@@ -37,7 +37,7 @@ router.get('/', async (req, res, next) => {
                         released: game.released,
                         platforms: game.platforms.map((p) => p.platform.name), //ask .join(", "),  si los quiero recibir como array descomentar el join.
                         genres: game.genres?.map(e => e.name),
-                        source: "Api",
+                        source: 'api',
                     };
                 });
 
@@ -47,7 +47,7 @@ router.get('/', async (req, res, next) => {
             console.log(pagesApi.length) // me aseguro q vengan 100 games
 
 
-            res.status(200).send(pagesApi.concat(gamesDb)); // concateno games api + games
+            res.status(200).send(gamesDb.concat(pagesApi)); // concateno games api + games
         } catch (e) {
             console.log(e)
         }
@@ -72,7 +72,7 @@ router.get('/', async (req, res, next) => {
             for (var i = 0; i < pages.length; i++) {
                 //itero las paginas y filtro todo los juegos de las paginas de la api que coincidan con el req query name
                 var gamesOfPage = pages[i].results
-                    .filter(elem =>
+                    .filter(elem =>   
                         elem.name.replace(/\s/g, '').toLowerCase().includes(req.query.name.replace(/\s/g, '').toLowerCase())
                     )
                     .map(elem => {

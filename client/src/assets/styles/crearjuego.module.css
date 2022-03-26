@@ -1,0 +1,322 @@
+
+.General {
+    position: absolute;
+    background-image: url('../../assets/statics/at-fix.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.title {
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3.6rem;
+    color: white;
+    text-shadow: 5px 5px 5px rgba(0, 192, 16, 0.746);
+    bottom: 1.7rem;
+    left: 7.7rem;
+    z-index: 2;
+
+}
+
+
+.transparentForm {
+    background-color: rgba(80, 95, 235, 0.459);
+    width: 800px;
+    height: 550px;
+    position: absolute;
+    top: 80px;
+    left: 400px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+
+
+.transparentForm::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50px;
+    background: transparent 50%;
+    overflow: hidden;
+}
+
+.nameDiv {
+position: relative;
+top: -1rem;
+z-index: 2;
+left: 1rem;
+}
+.nameInput{
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    height: 25px;
+    margin-bottom: 10px;
+    text-align-last: center;
+    box-shadow: inset 2px 2px 5px black;
+}
+.nameInput:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgb(46, 231, 0);
+}
+
+
+.descriptionDiv {
+    position: relative;
+    top: -1rem;
+    z-index: 2;
+    height: 100px;
+    left: 1rem;
+    
+    }
+
+.descriptionInput {
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    height: 100px;
+    margin-bottom: 6px; 
+    text-align-last: center;
+    box-shadow: inset 2px 2px 5px black;
+}
+.descriptionInput:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgb(46, 231, 0);
+}
+.dateDiv {
+    position: relative;
+    top: -0.5rem;
+    z-index: 2;
+    left: 1rem;
+    }
+
+.dateInput {
+    border-radius: 5px;
+    border: none;
+    width: 302px;
+    height: 25px;
+    margin-bottom: 9px;  
+    text-align-last:center;
+    box-shadow: inset 2px 2px 5px black;
+    
+}
+.dateInput:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgb(46, 231, 0);
+}
+.ratingDiv {
+position: relative;
+top: -0.5rem;
+z-index: 2;
+left: 1rem;
+}
+.ratingInput {
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    height: 25px;
+    margin-bottom: 10px; 
+    text-align-last: center;
+    box-shadow: inset 2px 2px 5px black;
+}
+.ratingInput:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgb(46, 231, 0);
+}
+
+.imageDiv {
+    position: relative;
+    top: -0.5rem;
+    z-index: 2;
+    left: 1rem;
+    }
+    .imageInput {
+        border-radius: 5px;
+        border: none;
+        width: 300px;
+        height: 25px;
+        margin-bottom: 10px; 
+        text-align-last: center;
+        box-shadow: inset 2px 2px 5px black;
+    }
+    .imageInput:hover{
+        cursor: pointer;
+        box-shadow: 2px 2px 2px rgb(46, 231, 0);
+    }
+
+
+
+
+
+
+
+
+.labelGenres {
+color: white;
+font-weight: bold;
+position: absolute;
+bottom: 27rem;
+left: 28.2rem;
+z-index: 2;
+}
+
+.labelPlatforms {
+position: absolute;
+font-weight: bold;
+bottom: 27rem;
+left: 40rem;
+color:white;
+z-index: 2;
+}
+
+.selectGenres {
+    
+    background-color: rgba(235, 43, 43, 0.431); 
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    position: relative;
+    bottom: 16.5rem;
+    left: 27rem;
+    border-radius: 5px;
+    border: none;
+    width: 130px;
+    height: 25px;
+    margin-bottom: 10px;  
+    text-align-last: center;
+    z-index: 2;
+    box-shadow: 1px 1px 1px rgb(46, 231, 0);
+    
+    
+}
+.selectGenres:hover {
+box-shadow: 3px 3px 3px rgb(46, 231, 0);
+transition: 0.7s; 
+}
+
+.selectPlatforms {
+    
+    background-color: rgba(235, 43, 43, 0.431); 
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    position: relative;
+    left: 31rem;
+    border-radius: 5px;
+    border: none;
+    width: 130px;
+    height: 25px;
+    margin-bottom: 10px;  
+    text-align-last: center;
+    z-index: 2;
+    bottom: 16.5rem;
+    box-shadow: 1px 1px 1px rgb(46, 231, 0);
+}
+.selectPlatforms:hover{
+box-shadow: 3px 3px 3px rgb(46, 231, 0);
+transition: 0.7s; 
+}
+
+.divRenderGenres {
+   position: absolute;
+    top: 10.5rem;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    z-index: 2;
+    left: 28rem;
+}
+.divRenderPlatforms {
+    position: relative;
+    top: -16rem;
+    justify-content: center; 
+    color: white;
+    font-weight: 600;
+    z-index: 2;
+    left: 40.5rem; 
+}
+
+.buttonXgenres{
+    position: relative;
+    right: 2px;
+    height: 20px;
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgba(255,0,60,1); 
+    background-color: thistle;
+    text-align-last: auto;
+    z-index: 2;
+}
+.buttonXplatforms {
+    position: relative;
+    right: 2px;
+    height: 20px;
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgba(255,0,60,1); 
+    background-color: thistle;
+    text-align-last: auto;
+    z-index: 2;
+}
+.buttonXplatforms:hover {
+    background-color: rgba(216, 191, 216, 0.507);
+    
+}
+.buttonXgenres:hover {
+    background-color: rgba(216, 191, 216, 0.507);
+}
+
+.buttonDone{
+    position: absolute;
+    right: 60px;
+    bottom: 30px;
+    width: 100px;
+    height: 50px;
+    padding: 8px;
+    border-radius: 20px;
+    border-style:none;
+    font-size: 15px;
+    color:rgb(0, 0, 0);
+    font-weight: 700;
+    background-color: rgba(233, 60, 233, 0.514);
+    box-shadow: 5px 5px 5px black;
+    z-index: 2;
+}
+.buttonDone:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(46, 231, 0);
+    box-shadow: 5px 5px 5px rgb(46, 231, 0);
+    transition: 0.7s; 
+}
+
+.buttonhome {
+    text-decoration: none;
+    position: absolute;
+    left: 60px;
+    bottom: 30px;
+    width: 100px;
+    height: 50px;
+    padding: 8px;
+    border-radius: 20px;
+    border-style:none;
+    font-size: 15px;
+    color:rgb(0, 0, 0);
+    font-weight: 700;
+    background-color: rgba(233, 60, 233, 0.561);
+    box-shadow: 5px 5px 5px black;
+    z-index: 2;
+    /* -webkit-text-stroke: 0.1px rgb(255, 255, 255); */
+}
+.buttonhome:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(46, 231, 0);
+    box-shadow: 5px 5px 5px rgb(46, 231, 0);
+    transition: 0.7s; 
+}

@@ -15,7 +15,6 @@ router.get("/:id", async (req, res, next) => {
                 where: {
                     id: pk,
                 },
-                attributes: ["name", "description", "rating", "released", "platforms"],
                 include: {
                     model: Genre,
                     attributes: ['name'],
@@ -58,7 +57,7 @@ router.get("/:id", async (req, res, next) => {
 
 
 router.post("/", async (req, res,) => {
-    const { name, description, released, rating, genres, platforms, image } = req.body;
+    const { name, description, released, rating, genres, platforms, image, createdInDb} = req.body;
     console.log("PEPE", req.body)
 
     const newVideogame = await Videogame.create({
@@ -68,6 +67,7 @@ router.post("/", async (req, res,) => {
         image,
         rating,
         platforms,
+        createdInDb,
 
     });
     console.log("PEPE", newVideogame)
