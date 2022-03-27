@@ -1,0 +1,12 @@
+.titulocargando{
+    margin-top: -5em;
+    margin-left: 9em;
+    font-family: 'Dongle', sans-serif;
+    color: pink;
+    font-size: 2em;
+}
+
+.img-loading {
+    height:100%;
+    width:100%;
+}

@@ -56,13 +56,13 @@ router.get('/', async (req, res, next) => {
 
         console.log("QUERY=", req.query.name);
         try {
-            let juegosDb = [];
-            let pages = [];
-            let apiGames = await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}&search=${req.query.name}`
+            
+           
+            let pages = await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}&search=${req.query.name}`
             );
 
             pages.push(apiGames.data);
-            let findDbGame = await Videogame.findAll({
+            let juegosDb = await Videogame.findAll({
                 where: {
                     name: { [Op.iLike]: `%${req.query.name}%` },
                 },
@@ -86,7 +86,7 @@ router.get('/', async (req, res, next) => {
                         };
                     });
                 if (gamesOfPage && gamesOfPage.length) {
-                    juegosDb.push(gamesOfPage); // pusheo todos los games que coinciden con el req query name
+                    juegosDb.concat(gamesOfPage); // pusheo todos los games que coinciden con el req query name
                 }
             }
 

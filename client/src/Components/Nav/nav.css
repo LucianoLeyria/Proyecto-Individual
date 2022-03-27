@@ -1,0 +1,55 @@
+.nav {
+    background-color: #141b29;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8em 1em 0 1em;
+    
+}
+
+.boton-nav {
+    border-radius: 0.7em;
+    border: 0.2em solid pink;
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: pink;
+}
+
+.boton-nav:hover {
+    cursor: pointer;
+    background-color: #284259;
+    color: pink;
+    border: 0.2em solid pink;
+}
+
+.filters-nav{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Dongle', sans-serif;
+}
+
+.filter-nav {
+    display: flex;
+    margin: auto;
+    padding: 1.5em;
+}
+
+.title-nav {
+    margin: auto;
+}
+
+.select {
+    border-radius: 0.6em;
+    background-color: #141b29;
+    border: 0.1em solid pink;
+    color: pink;
+    cursor: pointer;
+}
+
+
+

@@ -1,30 +1,22 @@
-import React from "react";
-import  {BrowserRouter, Switch, Route} from "react-router-dom"
-import Home from "./component/Home";
-
-import CreaVideogame from "./component/CrearVideogame.jsx"
-import Detalles from "./component/Detalles";
-import Landing from "./component/Landing";
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './App.css';
+import {LandingPage} from './Components/landingPage'
+import { VideogameDetail } from './Components/VideogameDetail/videogameDetail';
+import { Videogames } from './Components/Videogames/videogames';
+import { CreateVideogame } from './Components/CreateVideogame/createVideogame'
 
 function App() {
   return (
-    
-    <BrowserRouter>
+    <BrowserRouter >
+    <div className="App">
       <Switch>
-        <Route exact path='/' component={Landing} />
-        <Route exact path='/home' component={Home} />
-        <Route exact path='/crearvideogame' component={CreaVideogame} />
-        <Route path='/home/:id' component={Detalles}/> 
-        
-        
-
-        
+        <Route exact path='/' component={LandingPage}/>
+        <Route path='/home' component={Videogames}/>
+        <Route path='/detail/:id' component={VideogameDetail}/>
+        <Route path='/create' component={CreateVideogame}/>
       </Switch>
-    
+    </div>
     </BrowserRouter>
-   
-   
   );
 }
 

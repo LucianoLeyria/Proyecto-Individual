@@ -1,0 +1,25 @@
+.search-container {
+    padding-left: 11%;
+}
+
+.search-input {
+    padding: 0.7em;
+    margin-right: 1em;
+    border-radius: 2em;
+    border: 0.1em solid #0a0e17;
+}
+
+.search-boton {
+    border-radius: 1.5em;
+    background-color: #284259;
+    color: pink;
+    border: 0.1em solid pink;
+    padding: 0.6em;
+}
+
+.search-boton:hover {
+    background-color: pink;
+    color: black;
+    cursor: pointer;
+    
+}

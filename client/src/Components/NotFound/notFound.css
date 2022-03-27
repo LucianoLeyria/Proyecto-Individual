@@ -1,0 +1,10 @@
+.title-notFound {
+    color: pink;
+    font-family: 'Dongle', sans-serif;
+    font-size: 4em;
+}
+
+.img-notFound {
+    width: 50%;
+    height: 50%;
+}

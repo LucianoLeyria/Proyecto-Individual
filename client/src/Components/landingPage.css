@@ -1,0 +1,38 @@
+.landingPage {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.landingImg {
+    opacity: 50%;
+}
+
+.landingTitle {
+    position: absolute;
+    top: 10vh;
+    left: 36vw;
+    /* -webkit-text-stroke: 500% black; */
+    color: pink;
+    justify-content: center;
+    margin: auto;
+    font-family: 'Dongle', sans-serif;
+    font-size: 5em;
+}
+
+.button-home {
+    position: absolute;
+    justify-content: center;
+    margin: auto;   
+    cursor: pointer;
+    top: 75vh;
+    left: 45vw;
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid pink;
+    background-color: #141b29;
+    color: pink;
+    font-size: 2em;
+}
