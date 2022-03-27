@@ -1,0 +1,33 @@
+.inputs {
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border-color: #ffffff;
+  background-color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.buttons {
+  height: 35px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: black;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition: all ease 200ms;
+  cursor: pointer;
+  outline: none;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.buttons:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.buttons:active {
+  transform: translateY(3%);
+}

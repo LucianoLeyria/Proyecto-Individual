@@ -1,0 +1,124 @@
+.fondoLoading {
+  background-image: url("https://thumbs.dreamstime.com/b/gadgets-de-fondo-del-controlador-la-estaci%C3%B3n-juegos-video-207362049.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  overflow: auto;
+}
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(0, 0, 0);
+  background-attachment: fixed;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2rem;
+  color: #fffb00;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+.botonRefresh {
+  width: 10%;
+  height: 45px;
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fffb00;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  border: 3px solid white;
+  cursor: pointer;
+  box-shadow: 0px 5px 0px rgb(0, 0, 0);
+  transition: all ease 200ms;
+}
+
+.botonRefresh:hover {
+    background-color: white;
+    color:black;
+    transition: 0.500s;
+}
+
+.botonRefresh:active {
+  transform: translateY(10%);
+}
+
+.botonCreate {
+  width: 95%;
+  height: 45px;
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Staatliches", sans-serif;
+  color: #fffb00;
+  background-color: black;
+  border: 3px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease 200ms;
+}
+
+.botonCreate:hover {
+  background-color: white;
+  color:black;
+  transition: 0.500s;
+}
+
+
+.botonCreate:active {
+  transform: translateY(10%);
+}
+
+.selector {
+  width: 110px;
+  height: 30px;
+  margin-top: 30px;
+  border: 0;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 18px;
+  color: #fffb00;
+  background-color: black;
+  border: 3px solid white;
+  border-radius:0px;
+  cursor: pointer;
+}
+
+option {
+  color: rgb(0, 0, 0);
+}
+
+.card_contenedor {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+.loading {
+ 
+  width: 100%;
+  height: 100%;
+}
+
+.options{
+  color:yellow;
+  background-color: black;
+}
+
+
+.error {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}

@@ -1,0 +1,104 @@
+.fondoV {
+  background-image: url("https://thumbs.dreamstime.com/b/gadgets-de-fondo-del-controlador-la-estaci%C3%B3n-juegos-video-207362049.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  overflow: auto;
+}
+
+.contenedorAll {
+  background-color: rgba(0, 153, 255, 0.733);
+  height: 745px;
+  width: 700px;
+  border-radius: 18px;
+  margin-top: 10px;
+  margin-left: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tituloVideogame {
+
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.item {
+  margin-bottom: 2%;
+}
+
+.label {
+
+  letter-spacing: 5px;
+  color: #fff;
+  font-size: 1.3em;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+.input {
+  height: 25px;
+  width: 400px;
+  font-weight: bold;
+  border-radius: 10px;
+  border-color: #000000;
+  background-color: rgba(255, 255, 255, 0.945);
+  font-size: 16px;
+  box-shadow: 1px 1px 18px #00a2f0;
+}
+
+.select {
+  color:black;
+  font-weight: bold;
+}
+
+
+.listaGP {
+  display: inline-flex;
+  font-weight: bold;
+}
+
+
+.botonCreateVideogame {
+  margin-top:20px;
+  height: 30px;
+  width: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #00a2f0;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.botonCreate:hover {
+  background-color: #7ccdf4;
+  color: #fff;
+}
+
+.botonHome {
+  margin-top: 10px;
+  height: 30px;
+  width: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #00a2f0;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+ 
+ 
+}
+
+.botonHome:hover {
+  background-color: #7ccdf4;
+  color: #fff;
+}

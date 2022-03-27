@@ -24,7 +24,7 @@ module.exports = (sequelize) => {
     },
     image: {
       type: DataTypes.STRING,
-      defaultValue:'https://www.madridsalud.es/serviciopad/wp-content/uploads/bfi_thumb/estudio-revela-que-estadounidenses-gastan-cada-vez-mas-en-videojuegos-02-e1445888221548-mq1n2pwxokcxzj1lgbq1xan51jsnq7tx93br8mno30.jpg'
+      allowNull: true
     },
     rating: {
       type: DataTypes.INTEGER,

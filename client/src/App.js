@@ -1,23 +1,23 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
-import {LandingPage} from './Components/landingPage'
-import { VideogameDetail } from './Components/VideogameDetail/videogameDetail';
-import { Videogames } from './Components/Videogames/videogames';
-import { CreateVideogame } from './Components/CreateVideogame/createVideogame'
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+import Home from "./components/Home";
+import VideogameCreate from "./components/VideogameCreate";
+import Detail from "./components/Detail";
 
+//Tengo que envolver en el BrowserRouter para usar el ROUTE y setear las rutas
 function App() {
   return (
-    <BrowserRouter >
-    <div className="App">
-      <Switch>
-        <Route exact path='/' component={LandingPage}/>
-        <Route path='/home' component={Videogames}/>
-        <Route path='/detail/:id' component={VideogameDetail}/>
-        <Route path='/create' component={CreateVideogame}/>
-      </Switch>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<LandingPage />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/videogame" element={<VideogameCreate />} />
+          <Route exact path="/home/:id" element={<Detail />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
-
 export default App;
