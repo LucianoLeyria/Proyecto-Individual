@@ -5,7 +5,7 @@ const axios = require("axios");
 // API INFO
 const getApiInfo = async () => {
   try {
-    const arrVideogames = []; 
+    const arrVideogames = [];
     let apiUrl = `https://api.rawg.io/api/games?key=${YOUR_API_KEY}`;
 
     for (let i = 0; i < 5; i++) {
@@ -34,10 +34,6 @@ const getDbInfo = async () => {
   const infoDb = await Videogame.findAll({
     include: {
       model: Genre,
-      attributes: ["name"],
-      through: {
-        attributes: [],
-      },
     },
   });
   const mapInfoDb = infoDb?.map((e) => {
@@ -59,7 +55,7 @@ const getDbInfo = async () => {
 const getAllVideogames = async () => {
   const apiInfo = await getApiInfo();
   const dbInfo = await getDbInfo();
-  const infoTotal = dbInfo.concat(apiInfo)
+  const infoTotal = dbInfo.concat(apiInfo);
   return infoTotal;
 };
 

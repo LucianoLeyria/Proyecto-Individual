@@ -14,14 +14,14 @@ import Card from "./Card";
 import Paginado from "./Paginado";
 import SearchBar from "./SearchBar";
 import loadingBar from "../css/loading-35.gif";
+import notfound from "../css/notfound.jpg";
 import "../css/Home.css";
 
 export default function Home() {
   const dispatch = useDispatch();
   const allVideogames = useSelector((state) => state.videogames);
   const genres = useSelector((state) => state.genres);
-  console.log("ACAGENRES", genres);
-  // Estados locales
+
   const [, /*orden*/ setOrden] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [videogamesPerPage /*setVideogamesPerPage*/] = useState(15);
@@ -43,18 +43,16 @@ export default function Home() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    dispatch(getVideogames());
-    dispatch(getGenres())
+    dispatch(getGenres());
+    dispatch(getVideogames())
       .then((response) => {
         setLoading(false);
       })
       .catch((error) => setError(error.message));
   }, [dispatch]);
 
-  function handleClick(e) {
-    e.preventDefault();
-    dispatch(getVideogames());
-    setCurrentPage(1);
+  function handleRefresh(e) {
+    window.location.reload();
   }
 
   function handleFilterGenres(e) {
@@ -68,14 +66,12 @@ export default function Home() {
   }
 
   function handleSort(e) {
-    e.preventDefault();
     dispatch(orderByName(e.target.value));
     setCurrentPage(1);
     setOrden(e.target.value);
   }
 
   function handleSort2(e) {
-    e.preventDefault();
     dispatch(orderByRating(e.target.value));
     setCurrentPage(1);
     setOrden(e.target.value);
@@ -91,9 +87,8 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="fondoLoading">
-        <img src={loadingBar} className="loading" alt="loading" />
-        <br />
+      <div>
+        <img src={loadingBar} className="loading" alt="loading please wait" />
       </div>
     );
   }
@@ -174,10 +169,10 @@ export default function Home() {
         <button
           className="botonRefresh"
           onClick={(e) => {
-            handleClick(e);
+            handleRefresh(e);
           }}
         >
-          REFRESH
+          REFRESH GAMES
         </button>
         <Link to="/videogame">
           <button className="botonCreate">CREATE YOUR VIDEOGAME</button>
@@ -191,7 +186,9 @@ export default function Home() {
           paginado={paginado}
           currentPage={currentPage}
         />
+
         <SearchBar />
+
         <div className="card_contenedor">
           {currentVideogames.length > 0 ? (
             currentVideogames.map((e) => {
@@ -210,7 +207,8 @@ export default function Home() {
             })
           ) : (
             <div>
-              <h1 className="error">ERROR 404! Result not found.</h1>
+              <h1 className="error">INVALID NAME </h1>
+              <img src={notfound} className="notfound" alt="not found" />
             </div>
           )}
         </div>

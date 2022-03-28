@@ -40,9 +40,9 @@
 }
 
 .botonRefresh:hover {
-    background-color: white;
-    color:black;
-    transition: 0.500s;
+  background-color: white;
+  color: black;
+  transition: 0.5s;
 }
 
 .botonRefresh:active {
@@ -66,10 +66,9 @@
 
 .botonCreate:hover {
   background-color: white;
-  color:black;
-  transition: 0.500s;
+  color: black;
+  transition: 0.5s;
 }
-
 
 .botonCreate:active {
   transform: translateY(10%);
@@ -87,7 +86,7 @@
   color: #fffb00;
   background-color: black;
   border: 3px solid white;
-  border-radius:0px;
+  border-radius: 0px;
   cursor: pointer;
 }
 
@@ -103,22 +102,27 @@ option {
 }
 
 .loading {
- 
   width: 100%;
   height: 100%;
 }
 
-.options{
-  color:yellow;
+.options {
+  color: yellow;
   background-color: black;
 }
 
+.notfound {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+}
 
 .error {
+  font-weight: bold;
   color: white;
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 0px;
-  text-shadow: 2px 2px 5px rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }

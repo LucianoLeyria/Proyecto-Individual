@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { postVideogame, getGenres, getVideogames,  } from "../actions";
+import { postVideogame, getGenres, getVideogames } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 import "../css/VideogameCreate.css";
 
@@ -9,9 +9,7 @@ export default function VideogameCreate() {
   const dispatch = useDispatch();
   const genres = useSelector((state) => state.genres);
   const videogames = useSelector((state) => state.videogames);
-  const emi = useSelector((state) => state.platforms);
- 
-
+  const platforms = useSelector((state) => state.platforms);
 
   const [input, setInput] = useState({
     name: "",
@@ -50,7 +48,7 @@ export default function VideogameCreate() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (input.name.trim() === "") {
+    if (!input.name.trim()) {
       return alert("Need to put a name");
     } else if (
       videogames.find(
@@ -197,23 +195,23 @@ export default function VideogameCreate() {
               onChange={(e) => handleSelect2(e)}
             >
               <option disabled>Select</option>
-              {emi?.map((e) => (
+              {platforms?.map((e) => (
                 <option className="select" value={e} key={e}>
                   {e}
                 </option>
               ))}
             </select>
             <ul className="ul">
-                {input.platforms.map((e) => (
-              <li key={e} className="listaGP">
-                  <div className="divGP" >
+              {input.platforms.map((e) => (
+                <li key={e} className="listaGP">
+                  <div className="divGP">
                     {e + " "}
                     <button type="button" onClick={() => handleDelete2(e)}>
                       X
                     </button>
                   </div>
-              </li>
-                ))}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="item">
@@ -229,7 +227,7 @@ export default function VideogameCreate() {
           </div>
           <div>
             <button className="botonCreateVideogame" type="submit">
-              Create videogame 
+              Create videogame
             </button>
           </div>
           <div>

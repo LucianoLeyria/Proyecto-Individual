@@ -4,7 +4,7 @@ const axios = require("axios").default;
 const router = Router();
 const { YOUR_API_KEY } = process.env;
 
-router.get("/:id", async (req, res, next) => {
+router.get("/:id", async (req, res) => {
   const pk = req.params.id;
   let detail;
 
@@ -81,29 +81,6 @@ router.post("/", async (req, res) => {
   });
   newVideogame.setGenres(searchGenres);
   res.status(200).send(newVideogame);
-});
-
-router.delete(`/:id`, async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    return await Videogame.destroy({
-      where: {
-        id: id,
-      },
-    }).then(
-      function (rowDeleted) {
-        if (rowDeleted === 1) {
-          res.status(200).json("borrado con exito");
-        }
-      },
-      function (err) {
-        res.status(408).json("no se borro nada, el parametro estaba mal");
-      }
-    );
-  } catch (error) {
-    res.status(406).json("no se borro nada");
-  }
 });
 
 module.exports = router;

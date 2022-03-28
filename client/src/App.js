@@ -5,7 +5,6 @@ import Home from "./components/Home";
 import VideogameCreate from "./components/VideogameCreate";
 import Detail from "./components/Detail";
 
-//Tengo que envolver en el BrowserRouter para usar el ROUTE y setear las rutas
 function App() {
   return (
     <BrowserRouter>
