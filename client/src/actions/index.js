@@ -59,21 +59,6 @@ export function getNameVideogames(payload) {
   };
 }
 
-export function borrarjuego(payload) {
-  return async function () {
-    try {
-      let json = await axios.delete(
-        "http://localhost:3001/videogame/" + payload
-      );
-      alert("se borro el juego");
-      return json;
-    } catch (error) {
-      console.log(error);
-      alert(`no se borro nada: ${error}`);
-    }
-  };
-}
-
 export function getGenres() {
   return async function (dispatch) {
     const json = await axios.get("http://localhost:3001/genres");
