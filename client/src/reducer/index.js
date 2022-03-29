@@ -1,6 +1,6 @@
 const initialState = {
-  videogames: [], // aplico filtros
-  allVideogames: [], // copia para traer siempre los games
+  videogames: [],
+  allVideogames: [],
   genres: [],
   detail: [],
   platforms: [],

@@ -172,7 +172,7 @@ export default function Home() {
             handleRefresh(e);
           }}
         >
-          REFRESH GAMES
+          REFRESH ALL
         </button>
         <Link to="/videogame">
           <button className="botonCreate">CREATE YOUR VIDEOGAME</button>
