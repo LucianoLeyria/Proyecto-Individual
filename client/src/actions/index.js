@@ -96,6 +96,13 @@ export function getDetail(id) {
   };
 }
 
+export function flagLoad(payload) {
+  return {
+    type: "GET_LOADER",
+    payload,
+  };
+}
+
 export function vaciarDetail() {
   return {
     type: "VACIAR_DETAIL",
