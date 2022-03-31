@@ -85,7 +85,6 @@ export default function VideogameCreate() {
         platforms: [],
       });
       document.getElementById("formulario").reset();
-      window.location.reload();
     }
   }
 

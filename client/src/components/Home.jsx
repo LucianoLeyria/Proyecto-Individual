@@ -8,21 +8,19 @@ import {
   filterCreated,
   orderByRating,
   getGenres,
-  flagLoad,
 } from "../actions";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
 import SearchBar from "./SearchBar";
 import loadingBar from "../css/loading-35.gif";
-import notfound from "../css/notfound.png";
+import notfound from "../css/notfound.jpg";
 import "../css/Home.css";
 
 export default function Home() {
   const dispatch = useDispatch();
   const allVideogames = useSelector((state) => state.videogames);
   const genres = useSelector((state) => state.genres);
-  const loading = useSelector((state) => state.flagLoad);
 
   const [, /*orden*/ setOrden] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,9 +29,9 @@ export default function Home() {
   const indexOfLastVideogame = currentPage * videogamesPerPage; //  current (2) * 15 (games per page) = 30. entonces el last index is 30.
   const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage; //   30 (result de arriba) - 15 (games per page) = 15
 
-  // videogames en la actual page
+  //Videogames que estan en la pagina actual
   const currentVideogames = allVideogames.slice(
-    indexOfFirstVideogame,
+    indexOfFirstVideogame, // siempre van a ser 15 , el slice lo corta
     indexOfLastVideogame
   );
 
@@ -41,12 +39,17 @@ export default function Home() {
     setCurrentPage(pageNumber);
   };
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
   useEffect(() => {
-    dispatch(flagLoad(true));
     dispatch(getGenres());
-    dispatch(getVideogames());
-    // eslint-disable-next-line
-  }, []);
+    dispatch(getVideogames())
+      .then((response) => {
+        setLoading(false);
+      })
+      .catch((error) => setError(error.message));
+  }, [dispatch]);
 
   function handleRefresh(e) {
     window.location.reload();
@@ -72,6 +75,14 @@ export default function Home() {
     dispatch(orderByRating(e.target.value));
     setCurrentPage(1);
     setOrden(e.target.value);
+  }
+
+  if (error) {
+    return (
+      <div>
+        <h1>{error}</h1>
+      </div>
+    );
   }
 
   if (loading) {

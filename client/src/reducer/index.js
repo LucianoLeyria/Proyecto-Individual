@@ -4,7 +4,6 @@ const initialState = {
   genres: [],
   detail: [],
   platforms: [],
-  flagLoad: false,
 };
 
 function rootReducer(state = initialState, action) {
@@ -19,7 +18,6 @@ function rootReducer(state = initialState, action) {
         videogames: action.payload,
         allVideogames: action.payload,
         platforms: Array.from(new Set(platforms)),
-        flagLoad: false,
       };
 
     case "FILTER_BY_GENRES":
@@ -101,7 +99,6 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         videogames: action.payload,
-        flagLoad: false,
       };
 
     case "GET_GENRES":
@@ -125,12 +122,6 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         detail: [],
-      };
-
-    case "GET_LOADER":
-      return {
-        ...state,
-        flagLoad: action.payload,
       };
 
     default:
