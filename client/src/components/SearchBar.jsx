@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getNameVideogames, flagLoad } from "../actions";
 import "../css/SearchBar.css";
 // import loadingBar from "../css/loading-35.gif";
