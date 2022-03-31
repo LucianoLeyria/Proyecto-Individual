@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNameVideogames, flagLoad } from "../actions";
 import "../css/SearchBar.css";
+// import loadingBar from "../css/loading-35.gif";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -15,12 +16,12 @@ export default function SearchBar() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!name) {
+    if (!name.trim()) {
       return alert("Need to put a name");
     } else {
       dispatch(getNameVideogames(name));
       setName("");
-      document.getElementById("search").value = "";
+      dispatch(flagLoad(true));
     }
   }
 
@@ -32,6 +33,7 @@ export default function SearchBar() {
         type="text"
         placeholder="Search videogame"
         onChange={(e) => handleInputChange(e)}
+        value={name}
       />
       <button
         className="buttons"
